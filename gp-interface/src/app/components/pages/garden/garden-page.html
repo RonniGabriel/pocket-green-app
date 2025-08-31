@@ -1,0 +1,22 @@
+<section class="flex-nowrap">
+  <nav>
+    <ul class="flex w-full">
+      @for (item of menuOptions; track item.label) {
+      <li class="flex-1">
+        <button
+          type="button"
+          class="block w-full py-2 text-center hover:bg-green-100 hover:text-green-700"
+          (click)="openOptions(item)"
+        >
+          {{ item.label }}
+        </button>
+      </li>
+      }
+    </ul>
+  </nav>
+  <section class="w-full mt-4" id="garden-section">
+    @if (!data) {
+    <app-empty-state></app-empty-state>
+    }
+  </section>
+</section>

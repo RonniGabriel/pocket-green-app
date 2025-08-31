@@ -1,0 +1,39 @@
+<header>
+  <div class="w-full p-5 bg-grey-600 flex items-center justify-end border-b border-gray-300">
+    <p class="text-black font-bold text-2xl">Pocket <span class="text-green-800">Green</span></p>
+  </div>
+</header>
+
+<div class="flex flex-1 overflow-hidden">
+  <nav
+    class="p-5 border-r border-gray-300 transition-transform duration-500 overflow-hidden"
+    [class.w-16]="!sideBarMenuOpen"
+    [class.w-50]="sideBarMenuOpen"
+  >
+    <div class="flex justify-end">
+      <button (click)="toogleMenuNav()">
+        <fa-icon
+          [icon]="faBars"
+          class="text-black text-2xl cursor-pointer hover:text-green-600"
+        ></fa-icon>
+      </button>
+    </div>
+    <ul class="mt-10">
+      @for (item of navigationMenu ; track item.label) {
+      <li
+        class="flex items-center text-l font-light m-3 cursor-pointer hover:font-medium hover:text-green-700"
+        [class.justify-center]="!sideBarMenuOpen"
+      >
+        @if (!sideBarMenuOpen) {
+        <fa-icon [icon]="item.icon" class="text-black text-l hover:text-green-700"></fa-icon>
+        } @else {
+        <span>{{ item.label }}</span>
+        }
+      </li>
+      }
+    </ul>
+  </nav>
+  <main class="flex-1 overflow-y-auto p-3">
+    <router-outlet></router-outlet>
+  </main>
+</div>

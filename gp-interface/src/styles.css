@@ -1,0 +1,10 @@
+/* Tailwind v4 */
+@import 'tailwindcss';
+
+/* Angular Material prebuilt theme (elige uno) */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+/* Alternativas:
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "@angular/material/prebuilt-themes/purple-green.css";
+*/

@@ -1,0 +1,144 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="p-6 space-y-6 bg-white rounded-lg shadow-md"
+>
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-semibold">Añade una nueva planta al jardín</h2>
+    <button
+      class="p-2 rounded transition"
+      type="button"
+      (click)="closeForm()"
+      aria-label="Cerrar formulario"
+    >
+      <fa-icon
+        [icon]="closeFormIcon"
+        class="text-gray-500 text-xl cursor-pointer p-2 rounded-full transition hover:bg-red-100 hover:text-red-600"
+      >
+      </fa-icon>
+    </button>
+  </div>
+
+  <fieldset class="space-y-4">
+    <legend class="text-lg font-medium text-gray-800">Información de la planta</legend>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col">
+        <label for="plant-name" class="mb-1 font-medium">Nombre</label>
+        <input
+          id="plant-name"
+          type="text"
+          formControlName="plantName"
+          class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="plant-alias" class="mb-1 font-medium">Alias</label>
+        <input
+          id="plant-alias"
+          type="text"
+          formControlName="plantAlias"
+          class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="plant-species" class="mb-1 font-medium">Especie</label>
+        <input
+          id="plant-species"
+          type="text"
+          formControlName="plantSpecies"
+          class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="plant-type" class="mb-1 font-medium">Tipo de planta</label>
+        <select
+          id="plant-type"
+          formControlName="plantType"
+          class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+        >
+          <option value="">Selecciona un tipo</option>
+          <option value="interior">Interior</option>
+          <option value="exterior">Exterior</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Toggle -->
+    <input [formControl]="checkReminders" type="checkbox" />
+    Recordatorios de riego
+
+    <!-- Recordatorio -->
+    @if (checkReminders.value) {
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Número de riegos -->
+      <div class="flex flex-col">
+        <label for="number-reminder" class="mb-1 font-medium">Número de riegos</label>
+        <select
+          id="number-reminder"
+          [formControl]="wateringCounting"
+          class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+        >
+          <option value="" disabled selected>Selecciona un número</option>
+          @for (opt of reminderOptions; track opt) {
+          <option [value]="opt">{{ opt }}</option>
+          }
+        </select>
+      </div>
+
+      <!-- Frecuencia -->
+      <div class="flex flex-col">
+        <label for="date-frequency" class="mb-1 font-medium">Frecuencia</label>
+        <select
+          id="date-frequency"
+          [formControl]="wateringFrecuency"
+          class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+        >
+          <option value="" disabled selected>Selecciona una frecuencia</option>
+          @for (frequency of reminderFrecuency; track frequency) {
+          <option [value]="frequency">{{ frequency }}</option>
+          }
+        </select>
+      </div>
+    </div>
+    }
+
+    <!-- Imagen -->
+    <div class="flex flex-col">
+      <label for="plant-image" class="mb-1 font-medium">Imagen de la planta</label>
+      <input
+        class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-green-600 file:text-white hover:file:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600"
+        id="plant-image"
+        type="file"
+        accept="image/*"
+      />
+      <p class="mt-2 text-sm text-gray-500">Formatos permitidos: JPG, PNG, GIF</p>
+    </div>
+
+    <!-- Notas -->
+    <div class="flex flex-col">
+      <label for="notes" class="mb-1 font-medium">Notas</label>
+      <textarea
+        id="notes"
+        rows="3"
+        formControlName="notes"
+        class="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+      ></textarea>
+    </div>
+  </fieldset>
+
+  <div class="flex justify-end gap-3">
+    <button type="reset" class="px-4 py-2 border rounded hover:bg-gray-100 transition">
+      Cancelar
+    </button>
+    <button
+      type="submit"
+      class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+    >
+      Guardar
+    </button>
+  </div>
+</form>
