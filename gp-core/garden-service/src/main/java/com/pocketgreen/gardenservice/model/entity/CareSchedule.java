@@ -6,8 +6,6 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.*;
 
-import java.time.LocalDate;
-
 @Embeddable
 @Getter
 @Setter
@@ -19,5 +17,4 @@ public class CareSchedule {
     @Enumerated(EnumType.STRING)
     private WaterFrequency waterFrequency;
     private Integer waterCounty;
-
 }

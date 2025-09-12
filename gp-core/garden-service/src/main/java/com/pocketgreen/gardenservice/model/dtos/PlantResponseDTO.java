@@ -14,6 +14,7 @@ public record PlantResponseDTO(
         LightExposure lightExposure,
         EnvironmentParamsDTO environment,
         CareScheduleDTO care,
+        Integer units,
         LocalDate createdAt,
         LocalDate updatedAt
 ) {}

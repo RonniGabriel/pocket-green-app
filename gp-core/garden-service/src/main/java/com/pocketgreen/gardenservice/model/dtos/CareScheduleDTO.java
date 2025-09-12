@@ -1,20 +1,16 @@
 package com.pocketgreen.gardenservice.model.dtos;
 
+import com.pocketgreen.gardenservice.model.enums.WaterFrequency;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+
 import java.time.LocalDate;
 
 public record CareScheduleDTO(
-        @Positive
-        Integer waterEveryDays,
+        @NotNull
+        WaterFrequency waterFrequency,
 
-        @Positive
-        Integer fertilizeEveryDays,
-
-        LocalDate lastWateredAt,
-
-        LocalDate lastFertilizedAt,
-
-        LocalDate lastPrunedAt,
-
-        LocalDate lastRepottedAt
+        @PositiveOrZero
+        Integer waterCounty
 ) {}
