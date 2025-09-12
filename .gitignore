@@ -1,6 +1,5 @@
-# =========================
+
 # OS junk
-# =========================
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -10,9 +9,8 @@ Desktop.ini
 $RECYCLE.BIN/
 *.lnk
 
-# =========================
+
 # IDEs / Tools
-# =========================
 .idea/
 *.iml
 .vscode/
@@ -26,9 +24,8 @@ $RECYCLE.BIN/
 .scannerwork/
 .mvn/timing.properties
 
-# =========================
+
 # Node / Angular (gp-interface)
-# =========================
 node_modules/
 dist/
 out-tsc/
@@ -40,17 +37,16 @@ coverage/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-# lockfiles se versionan: NO ignorar package-lock.json / yarn.lock / pnpm-lock.yaml
 
-# =========================
+
+
 # Java / Spring Boot (gp-core)
-# =========================
 **/target/
 **/build/
 **/out/
 **/bin/
 
-# Logs & temp (comunes)
+# Logs & temp
 **/*.log
 **/logs/
 **/*.pid
@@ -63,9 +59,8 @@ replay_pid*
 *.swo
 *~
 
-# =========================
+
 # Test reports & coverage
-# =========================
 **/surefire-reports/
 **/failsafe-reports/
 **/test-results/
@@ -74,9 +69,8 @@ replay_pid*
 **/jacoco-report/
 **/coverage/
 
-# =========================
-# Databases locales (H2/SQLite, etc.)
-# =========================
+
+# Databases locales
 **/data/
 **/*.mv.db
 **/*.trace.db
@@ -87,9 +81,8 @@ replay_pid*
 **/*.db-wal
 **/*.sqlite
 
-# =========================
-# Docker / env / secrets (ajusta según tu política)
-# =========================
+
+# Docker / env / secrets
 .env
 *.env
 .env.*
@@ -103,9 +96,8 @@ replay_pid*
 **/*.jks
 **/*.keystore
 
-# =========================
+
 # Misc
-# =========================
 *.bak
 *.orig
 *.rej
