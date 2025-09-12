@@ -1,49 +1,111 @@
-# Angular / Node.js
+# =========================
+# OS junk
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# =========================
+# IDEs / Tools
+# =========================
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+.factorypath
+*.ipr
+*.iws
+.sonar/
+.scannerwork/
+.mvn/timing.properties
+
+# =========================
+# Node / Angular (gp-interface)
+# =========================
 node_modules/
 dist/
 out-tsc/
+.angular/
+.sass-cache/
+.cache/
 .tmp/
 coverage/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
+# lockfiles se versionan: NO ignorar package-lock.json / yarn.lock / pnpm-lock.yaml
 
-# Angular cache
-.angular/
-.sass-cache/
-.cache/
+# =========================
+# Java / Spring Boot (gp-core)
+# =========================
+**/target/
+**/build/
+**/out/
+**/bin/
 
-# Compilados / Cache
-*.log
-*.lock
+# Logs & temp (comunes)
+**/*.log
+**/logs/
+**/*.pid
+hs_err_pid*
+replay_pid*
+*.hprof
 *.tmp
 *.temp
-*.tsbuildinfo
+*.swp
+*.swo
+*~
 
-# VS Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# =========================
+# Test reports & coverage
+# =========================
+**/surefire-reports/
+**/failsafe-reports/
+**/test-results/
+**/jacoco.exec
+**/jacoco*.exec
+**/jacoco-report/
+**/coverage/
 
-# Visual Studio
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+# =========================
+# Databases locales (H2/SQLite, etc.)
+# =========================
+**/data/
+**/*.mv.db
+**/*.trace.db
+**/*.lock.db
+**/*.h2.db
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/*.sqlite
 
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
+# =========================
+# Docker / env / secrets (ajusta según tu política)
+# =========================
+.env
+*.env
+.env.*
+**/.env.*
+**/secrets/
+**/*.key
+**/*.pem
+**/*.crt
+**/*.cer
+**/*.p12
+**/*.jks
+**/*.keystore
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Git
-.gitignore
+# =========================
+# Misc
+# =========================
+*.bak
+*.orig
+*.rej
