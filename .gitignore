@@ -1,4 +1,3 @@
-
 # OS junk
 .DS_Store
 .AppleDouble
@@ -8,7 +7,6 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 *.lnk
-
 
 # IDEs / Tools
 .idea/
@@ -24,21 +22,19 @@ $RECYCLE.BIN/
 .scannerwork/
 .mvn/timing.properties
 
-
-# Node / Angular (gp-interface)
-node_modules/
-dist/
-out-tsc/
-.angular/
-.sass-cache/
-.cache/
-.tmp/
-coverage/
+# Node / Angular (global)
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+# gp-interface (Angular)
+gp-interface/.angular/
+gp-interface/dist/
+gp-interface/node_modules/
+gp-interface/coverage/
+gp-interface/out-tsc/
+gp-interface/.cache/
+gp-interface/.tmp/
 
 # Java / Spring Boot (gp-core)
 **/target/
@@ -59,7 +55,6 @@ replay_pid*
 *.swo
 *~
 
-
 # Test reports & coverage
 **/surefire-reports/
 **/failsafe-reports/
@@ -68,7 +63,6 @@ replay_pid*
 **/jacoco*.exec
 **/jacoco-report/
 **/coverage/
-
 
 # Databases locales
 **/data/
@@ -80,7 +74,6 @@ replay_pid*
 **/*.db-shm
 **/*.db-wal
 **/*.sqlite
-
 
 # Docker / env / secrets
 .env
@@ -95,7 +88,6 @@ replay_pid*
 **/*.p12
 **/*.jks
 **/*.keystore
-
 
 # Misc
 *.bak
