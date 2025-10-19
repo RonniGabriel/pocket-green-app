@@ -11,7 +11,9 @@ $RECYCLE.BIN/
 # IDEs / Tools
 .idea/
 *.iml
-.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
 .project
 .classpath
 .settings/
@@ -21,6 +23,7 @@ $RECYCLE.BIN/
 .sonar/
 .scannerwork/
 .mvn/timing.properties
+
 
 # Node / Angular (global)
 npm-debug.log*
@@ -35,6 +38,7 @@ gp-interface/coverage/
 gp-interface/out-tsc/
 gp-interface/.cache/
 gp-interface/.tmp/
+
 
 # Java / Spring Boot (gp-core)
 **/target/
